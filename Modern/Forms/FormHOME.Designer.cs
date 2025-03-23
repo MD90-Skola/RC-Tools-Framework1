@@ -46,7 +46,17 @@ namespace Modern.Forms
             this.labelDatum = new System.Windows.Forms.Label();
             this.labelVecka = new System.Windows.Forms.Label();
             this.labelManad = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1cpuNamn = new System.Windows.Forms.Label();
+            this.label1gpuNamn = new System.Windows.Forms.Label();
+            this.label1ramNamn = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // label3
             // 
@@ -60,7 +70,7 @@ namespace Modern.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 37);
+            this.label4.Location = new System.Drawing.Point(488, 287);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 16);
             this.label4.TabIndex = 3;
@@ -70,7 +80,7 @@ namespace Modern.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 53);
+            this.label5.Location = new System.Drawing.Point(488, 303);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 16);
             this.label5.TabIndex = 4;
@@ -79,7 +89,7 @@ namespace Modern.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 69);
+            this.label6.Location = new System.Drawing.Point(488, 319);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 16);
             this.label6.TabIndex = 5;
@@ -88,7 +98,7 @@ namespace Modern.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(257, 69);
+            this.label7.Location = new System.Drawing.Point(711, 319);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 16);
             this.label7.TabIndex = 6;
@@ -97,7 +107,7 @@ namespace Modern.Forms
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(257, 53);
+            this.label8.Location = new System.Drawing.Point(711, 303);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 16);
             this.label8.TabIndex = 7;
@@ -106,7 +116,7 @@ namespace Modern.Forms
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(257, 37);
+            this.label9.Location = new System.Drawing.Point(711, 287);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(28, 16);
             this.label9.TabIndex = 8;
@@ -116,7 +126,7 @@ namespace Modern.Forms
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(34, 9);
+            this.label10.Location = new System.Drawing.Point(488, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 16);
             this.label10.TabIndex = 9;
@@ -175,12 +185,69 @@ namespace Modern.Forms
             this.labelManad.Text = "MMMM";
             this.labelManad.Click += new System.EventHandler(this.label11_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(67, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(292, 22);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(67, 63);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(292, 22);
+            this.textBox2.TabIndex = 13;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(67, 91);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(45, 22);
+            this.textBox3.TabIndex = 14;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label1cpuNamn
+            // 
+            this.label1cpuNamn.AutoSize = true;
+            this.label1cpuNamn.Location = new System.Drawing.Point(12, 34);
+            this.label1cpuNamn.Name = "label1cpuNamn";
+            this.label1cpuNamn.Size = new System.Drawing.Size(35, 16);
+            this.label1cpuNamn.TabIndex = 15;
+            this.label1cpuNamn.Text = "CPU";
+            // 
+            // label1gpuNamn
+            // 
+            this.label1gpuNamn.AutoSize = true;
+            this.label1gpuNamn.Location = new System.Drawing.Point(12, 63);
+            this.label1gpuNamn.Name = "label1gpuNamn";
+            this.label1gpuNamn.Size = new System.Drawing.Size(36, 16);
+            this.label1gpuNamn.TabIndex = 16;
+            this.label1gpuNamn.Text = "GPU";
+            // 
+            // label1ramNamn
+            // 
+            this.label1ramNamn.AutoSize = true;
+            this.label1ramNamn.Location = new System.Drawing.Point(11, 91);
+            this.label1ramNamn.Name = "label1ramNamn";
+            this.label1ramNamn.Size = new System.Drawing.Size(37, 16);
+            this.label1ramNamn.TabIndex = 17;
+            this.label1ramNamn.Text = "RAM";
+            // 
             // FormHOME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(937, 472);
+            this.Controls.Add(this.label1ramNamn);
+            this.Controls.Add(this.label1gpuNamn);
+            this.Controls.Add(this.label1cpuNamn);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.labelManad);
             this.Controls.Add(this.labelVecka);
@@ -204,11 +271,10 @@ namespace Modern.Forms
 
         private void FormHOME_Load(object sender, EventArgs e)
         {
-            timeUpdater = new Timer();
-            timeUpdater.Interval = 1000; // 1 sekund
-            timeUpdater.Tick += TimeUpdater_Tick;
-            timeUpdater.Start();
+            StartClock(); // För klockan
+            GetHardwareInfo(); // För CPU, GPU, RAM
         }
+
 
         #endregion
 
@@ -226,6 +292,12 @@ namespace Modern.Forms
         private Label labelDatum;
         private Label labelVecka;
         private Label labelManad;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private Label label1cpuNamn;
+        private Label label1gpuNamn;
+        private Label label1ramNamn;
     }
 
 

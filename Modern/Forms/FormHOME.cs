@@ -1,98 +1,87 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Management;
 using System.Windows.Forms;
-
 
 namespace Modern.Forms
 {
-    public partial class FormHOME: Form
+    public partial class FormHOME : Form
     {
+        private Timer timeUpdater;
+
         public FormHOME()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
+        // Körs när formuläret laddas
 
 
-
-
-
-
-
-
-
-
-
-        //////////////////////////////////////////////////////
-        ////////////////       KLOCKA        /////////////////
-        //////////////////////////////////////////////////////
-
-
-        private Timer timeUpdater;
-
-        private void Form1_Load(object sender, EventArgs e)
+        // Startar klockan
+        private void StartClock()
         {
             timeUpdater = new Timer();
-            timeUpdater.Interval = 1000; // 1000 ms = 1 sekund
+            timeUpdater.Interval = 1000;
             timeUpdater.Tick += TimeUpdater_Tick;
             timeUpdater.Start();
         }
 
-
+        // Uppdaterar tid, datum och vecka
         private void TimeUpdater_Tick(object sender, EventArgs e)
         {
             TimerAPII.Text = DateTime.Now.ToString("yyyy-MM-dd");
             labelDatum.Text = DateTime.Now.ToString("HH:mm:ss");
 
-            // Hämta aktuell vecka (ISO 8601 - svensk standard)
             CultureInfo ci = CultureInfo.CurrentCulture;
             Calendar calendar = ci.Calendar;
             CalendarWeekRule rule = ci.DateTimeFormat.CalendarWeekRule;
             DayOfWeek firstDayOfWeek = ci.DateTimeFormat.FirstDayOfWeek;
-
             int vecka = calendar.GetWeekOfYear(DateTime.Now, rule, firstDayOfWeek);
             labelVecka.Text = "Vecka: " + vecka.ToString();
 
-            // Månadens namn på svenska
             labelManad.Text = DateTime.Now.ToString("MMMM", new CultureInfo("sv-SE"));
-
-
         }
 
-
-
-
-        private void label11_Click(object sender, EventArgs e)
+        // Hämta CPU, GPU och RAM
+        private void GetHardwareInfo()
         {
-            labelManad.Text = DateTime.Now.ToString("MMMM", new CultureInfo("sv-SE"));  // Ger "mars"
+            try
+            {
+                // CPU
+                using (var searcher = new ManagementObjectSearcher("select Name from Win32_Processor"))
+                {
+                    foreach (var item in searcher.Get())
+                    {
+                        textBox1.Text = item["Name"].ToString();
+                        break;
+                    }
+                }
 
+                // GPU
+                using (var searcher = new ManagementObjectSearcher("select Name from Win32_VideoController"))
+                {
+                    foreach (var item in searcher.Get())
+                    {
+                        textBox2.Text = item["Name"].ToString();
+                        break;
+                    }
+                }
 
+                // RAM
+                using (var searcher = new ManagementObjectSearcher("Select Capacity from Win32_PhysicalMemory"))
+                {
+                    ulong totalMemory = 0;
+                    foreach (var item in searcher.Get())
+                    {
+                        totalMemory += Convert.ToUInt64(item["Capacity"]);
+                    }
+                    textBox3.Text = (totalMemory / (1024 * 1024 * 1024)) + " GB";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fel vid hårdvaruhämtning: " + ex.Message);
+            }
         }
 
 
@@ -114,5 +103,36 @@ namespace Modern.Forms
 
 
 
+
+
+
+
+
+
+
+
+
+        // Tomma eventhandlers om du inte använder dem
+        private void textBox1_TextChanged(object sender, EventArgs e) 
+        
+        { 
+        
+            
+        
+        }
+
+
+
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+        private void textBox3_TextChanged(object sender, EventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
+        private void label4_Click(object sender, EventArgs e) { }
+        private void label9_Click(object sender, EventArgs e) { }
+        private void label10_Click(object sender, EventArgs e) { }
+        private void label11_Click(object sender, EventArgs e) { }
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) { }
     }
 }
