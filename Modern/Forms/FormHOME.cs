@@ -134,5 +134,10 @@ namespace Modern.Forms
         private void label11_Click(object sender, EventArgs e) { }
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) { }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,14 +33,9 @@ namespace Modern.Forms
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.TimerAPII = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.labelDatum = new System.Windows.Forms.Label();
@@ -58,47 +53,10 @@ namespace Modern.Forms
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 382);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Engelska Translater";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(488, 287);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "AMD - RYZEN 9800XD3";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(488, 303);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "RTX 3090";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(488, 319);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 16);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "32 GB RAM";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(711, 319);
+            this.label7.Location = new System.Drawing.Point(118, 97);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 16);
             this.label7.TabIndex = 6;
@@ -107,7 +65,7 @@ namespace Modern.Forms
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(711, 303);
+            this.label8.Location = new System.Drawing.Point(365, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 16);
             this.label8.TabIndex = 7;
@@ -116,22 +74,12 @@ namespace Modern.Forms
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(711, 287);
+            this.label9.Location = new System.Drawing.Point(365, 40);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(28, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "40c";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(488, 259);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 16);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "PC API";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // TimerAPII
             // 
@@ -230,6 +178,7 @@ namespace Modern.Forms
             // label1ramNamn
             // 
             this.label1ramNamn.AutoSize = true;
+            this.label1ramNamn.BackColor = System.Drawing.Color.Transparent;
             this.label1ramNamn.Location = new System.Drawing.Point(11, 91);
             this.label1ramNamn.Name = "label1ramNamn";
             this.label1ramNamn.Size = new System.Drawing.Size(37, 16);
@@ -253,14 +202,9 @@ namespace Modern.Forms
             this.Controls.Add(this.labelVecka);
             this.Controls.Add(this.labelDatum);
             this.Controls.Add(this.TimerAPII);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Name = "FormHOME";
             this.Text = "HOME";
             this.Load += new System.EventHandler(this.FormHOME_Load);
@@ -279,14 +223,9 @@ namespace Modern.Forms
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label TimerAPII;
         private System.Windows.Forms.Label label12;
         private Label labelDatum;
