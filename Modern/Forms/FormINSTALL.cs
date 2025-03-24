@@ -26,5 +26,71 @@ namespace Modern.Forms
         {
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("notion://");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kunde inte öppna Notion: " + ex.Message);
+            }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Öppnar PowerToys i Microsoft Store
+                System.Diagnostics.Process.Start("ms-windows-store://pdp/?productid=XP89DCGQ3K6VLD");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kunde inte öppna Microsoft Store: " + ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Öppnar ChatGPT i Microsoft Store
+                System.Diagnostics.Process.Start("ms-windows-store://pdp/?productid=9NH7FJ33R6MG");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kunde inte öppna Microsoft Store: " + ex.Message);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Öppnar Spotify i Microsoft Store
+                System.Diagnostics.Process.Start("ms-windows-store://pdp/?productid=9NCBCSZSJRSB");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kunde inte öppna Microsoft Store: " + ex.Message);
+            }
+        }
     }
 }

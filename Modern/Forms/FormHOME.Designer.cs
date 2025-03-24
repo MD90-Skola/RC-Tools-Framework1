@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Text;
+using Microsoft.Win32;
 
 
 namespace Modern.Forms
@@ -47,6 +49,9 @@ namespace Modern.Forms
             this.label1cpuNamn = new System.Windows.Forms.Label();
             this.label1gpuNamn = new System.Windows.Forms.Label();
             this.label1ramNamn = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // backgroundWorker1
@@ -185,12 +190,45 @@ namespace Modern.Forms
             this.label1ramNamn.TabIndex = 17;
             this.label1ramNamn.Text = "RAM";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(862, 414);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(63, 46);
+            this.iconButton1.TabIndex = 18;
+            this.iconButton1.Text = "Noteion";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(74, 161);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(285, 22);
+            this.textBox4.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "CD-KEY";
+            // 
             // FormHOME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(937, 472);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label1ramNamn);
             this.Controls.Add(this.label1gpuNamn);
             this.Controls.Add(this.label1cpuNamn);
@@ -205,8 +243,9 @@ namespace Modern.Forms
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
+            this.ForeColor = System.Drawing.SystemColors.InfoText;
             this.Name = "FormHOME";
-            this.Text = "HOME";
+            this.Text = "Home";
             this.Load += new System.EventHandler(this.FormHOME_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,6 +276,9 @@ namespace Modern.Forms
         private Label label1cpuNamn;
         private Label label1gpuNamn;
         private Label label1ramNamn;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private TextBox textBox4;
+        private Label label1;
     }
 
 

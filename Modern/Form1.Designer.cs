@@ -235,7 +235,7 @@
             // btnHome
             // 
             this.btnHome.Image = global::Modern.Properties.Resources.tools1;
-            this.btnHome.Location = new System.Drawing.Point(12, 12);
+            this.btnHome.Location = new System.Drawing.Point(22, 23);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(135, 53);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -275,7 +275,7 @@
             // lblTitleChildform1
             // 
             this.lblTitleChildform1.AutoSize = true;
-            this.lblTitleChildform1.Location = new System.Drawing.Point(70, 24);
+            this.lblTitleChildform1.Location = new System.Drawing.Point(51, 32);
             this.lblTitleChildform1.Name = "lblTitleChildform1";
             this.lblTitleChildform1.Size = new System.Drawing.Size(44, 16);
             this.lblTitleChildform1.TabIndex = 1;
@@ -289,8 +289,7 @@
             this.iconCurrentChildForm0.IconChar = FontAwesome.Sharp.IconChar.House;
             this.iconCurrentChildForm0.IconColor = System.Drawing.Color.MediumPurple;
             this.iconCurrentChildForm0.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm0.IconSize = 36;
-            this.iconCurrentChildForm0.Location = new System.Drawing.Point(36, 9);
+            this.iconCurrentChildForm0.Location = new System.Drawing.Point(57, 6);
             this.iconCurrentChildForm0.Name = "iconCurrentChildForm0";
             this.iconCurrentChildForm0.Size = new System.Drawing.Size(36, 36);
             this.iconCurrentChildForm0.TabIndex = 0;

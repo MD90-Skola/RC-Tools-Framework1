@@ -382,7 +382,7 @@ namespace Modern
         // GitHUB
         private void iconPictureBox1_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/MD90-Skola");
+            System.Diagnostics.Process.Start("https://github.com/MD90-Skola?tab=repositories");
         }
 
 

@@ -94,6 +94,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormINSTALL.resx">
       <DependentUpon>FormINSTALL.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormOVRIGT.resx">
       <DependentUpon>FormOVRIGT.cs</DependentUpon>

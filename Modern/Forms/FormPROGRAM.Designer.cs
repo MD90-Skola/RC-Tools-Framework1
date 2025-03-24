@@ -40,7 +40,7 @@
             this.ClientSize = new System.Drawing.Size(937, 472);
             this.Controls.Add(this.label1);
             this.Name = "FormPROGRAM";
-            this.Text = "FormPROGRAM";
+            this.Text = "Program";
             this.Load += new System.EventHandler(this.FormPROGRAM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

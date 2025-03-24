@@ -3,6 +3,43 @@ using System.Globalization;
 using System.Management;
 using System.Windows.Forms;
 
+
+
+
+
+
+/**
+ * 
+ * 
+ *           Windows Update	                 ms-settings:windowsupdate
+ *           Bluetooth-inställningar	     ms-settings:bluetooth
+ *           Nätverk & internet	             ms-settings:network
+ *           Sekretessinställningar	         ms-settings:privacy
+ *           Lagring	                     ms-settings:storagesense
+ *           Strömalternativ	             ms-settings:powersleep
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 namespace Modern.Forms
 {
     public partial class FormHOME : Form
@@ -113,12 +150,12 @@ namespace Modern.Forms
 
 
         // Tomma eventhandlers om du inte använder dem
-        private void textBox1_TextChanged(object sender, EventArgs e) 
-        
-        { 
-        
-            
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        {
+
+
+
         }
 
 
@@ -139,5 +176,45 @@ namespace Modern.Forms
         {
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("notion://");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kunde inte öppna Notion: " + ex.Message);
+            }
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("sndvol");
+
+
+
+        }
+
+
+
+
+        private void iconMouseSettings_MouseClick(object sender, MouseEventArgs e)
+        {
+            System.Diagnostics.Process.Start("ms-settings:mouse");
+        }
+
+
+
+
+
+
+
+
+
     }
+
+
+
 }
